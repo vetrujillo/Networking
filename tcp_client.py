@@ -1,7 +1,8 @@
 import socket
 
-target_host = "www.google.com"
-target_port = 80
+#Example host and port, matches tcp_server.py
+target_host = '0.0.0.0'
+target_port = 9998
 
 #Create socket object
 #AF_INET indicates use of standard IPv4 addr or hostname
@@ -12,7 +13,7 @@ client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((target_host,target_port))
 
 #Send data as bytes
-client.send(b"GET / HTTP/1.1\r\nHost: google.com\r\n\r\n")
+client.send(b"Howdy")
 
 #Receive data
 response = client.recv(4096)
