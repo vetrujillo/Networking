@@ -16,7 +16,7 @@ client.connect((target_host,target_port))
 client.send(b"Howdy")
 
 #Receive data
-response = client.recv(4096)
+response = client.recv(1024)
 
 print(response.decode())
 client.close()
